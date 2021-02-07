@@ -24,12 +24,14 @@ const getData = name =>{
         
     }
 
-    // showing Ingredient
+   
     document.getElementById('search-button').addEventListener('click',()=>{
         const selectFood =document.getElementById('select-food').value;
         getData(selectFood);
         
     })
+    
+    // showing Ingredient
     const displayFoodsDetails = listOfFood=>{
         const url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${listOfFood}`;
         fetch(url)
