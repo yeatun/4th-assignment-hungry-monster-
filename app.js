@@ -1,9 +1,13 @@
 const getData = name =>{
+    if(name != ''){
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
     fetch(url)
     .then(res => res.json())
     .then (data => displayFoods(data.meals))
-    .catch(error => alert('OPPS!no foods are matching'));
+    .catch(error => alert('OPSS!no foods are matching'));}
+    else{
+        error();
+    }
     }
     // foods list
     const displayFoods = foods => {
@@ -18,13 +22,14 @@ const getData = name =>{
                 <h3>${food.strMeal}</h3>
                 </div>
                 `;
+               foodDiv.value ='';
                 foodDiv.innerHTML = foodInfo;
               foodsItem.appendChild(foodDiv);
         })
         
     }
-
-   
+  
+//    for button
     document.getElementById('search-button').addEventListener('click',()=>{
         const selectFood =document.getElementById('select-food').value;
         getData(selectFood);
@@ -53,6 +58,10 @@ const getData = name =>{
         <li> <p> <b> ${food.strIngredient4} </p> </li>
         <li> <p> <b> ${food.strIngredient5} </p> </li>
         <li> <p> <b> ${food.strIngredient6} </p> </li>
+         <li> <p> <b> ${food.strIngredient7} </p> </li>
+         <li> <p> <b> ${food.strIngredient8} </p> </li>
+         <li> <p> <b> ${food.strIngredient9} </p> </li>
+         <li> <p> <b> ${food.strIngredient10} </p> </li>
         </ul>
         
         `
