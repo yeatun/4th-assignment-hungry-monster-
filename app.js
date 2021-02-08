@@ -9,10 +9,11 @@ const getData = name =>{
         error();
     }
     }
+  
     // foods list
     const displayFoods = foods => {
         const foodsItem = document.getElementById("all-foods");
-    
+        foodsItem.innerHTML = " ";
         foods.forEach(food => {
             const foodDiv = document.createElement('div');
             foodDiv.className ="food";
@@ -47,6 +48,7 @@ const getData = name =>{
     
     const renderFoodInfo = food =>{
         const foodDetail = document.getElementById("foods-details");
+        foodDetail.innerHTML ="";
         const foodDetailDiv = document.createElement('div');
         foodDetailDiv.className = 'food-detail';
         const allListOfFood =`
@@ -65,7 +67,6 @@ const getData = name =>{
         </ul>
         
         `
-        
         foodDetailDiv.innerHTML = allListOfFood;
         foodDetail.appendChild(foodDetailDiv);
     
